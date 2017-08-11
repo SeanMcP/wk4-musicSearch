@@ -1,3 +1,122 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  background-color: #60d9f1;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*********************************************
+                Begin Styles
+*********************************************/
+
+body {
+  background-color: white;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+header {
+  background: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+h1 {
+  font-size: 1em;
+}
+section.player {
+  background: url(./concert.jpg) bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 200px 0;
+}
+audio {
+  display: none;
+  margin: 20px auto;
+}
+.search-form {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+  width: 60%;
+}
+.search-form * {
+  color: white;
+  font-size: 1em;
+  font-weight: 300;
+}
+.search-form input {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  border: 0;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1 50%;
+  font-family: 'Roboto';
+  font-weight: 300;
+  padding: 0 20px;
+}
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.search-form button {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  border: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto';
+  font-weight: 300;
+  padding: 20px 30px;
+}
+.search-form button:hover {
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+.resultItem {
+  background: url('http://is1.mzstatic.com/image/thumb/Music2/v4/a2/66/32/a2663205-663c-8301-eec7-57937c2d0878/source/100x100bb.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100px;
+  width: 200px;
+}
+.resultItem * {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  bottom: 0;
 }
