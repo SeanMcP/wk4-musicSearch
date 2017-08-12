@@ -85,4 +85,10 @@ function searchClick(){
   }
 }
 
+// if(searchButton.addEventListener){
+//   searchButton.addEventListener('submit', searchClick, false);
+// } else if(searchButton.attachEvent){
+//   searchButton.attachEvent('onsubmit', searchClick);
+// }
+
 searchButton.addEventListener('click', searchClick);

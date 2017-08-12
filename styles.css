@@ -68,6 +68,11 @@ header {
 }
 #logo {
   font-size: 1em;
+	font-weight: 700;
+}
+.italic {
+	font-style: italic;
+	font-weight: 300;
 }
 section.player {
   padding: 200px 0;
@@ -112,7 +117,7 @@ section.player {
   padding: 20px 30px;
 }
 .search-form button:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
   color: rgba(255, 255, 255, 0.7);
 }
 #resultsGrid {
