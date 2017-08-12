@@ -8,13 +8,13 @@
 <body>
   <div class="container">
     <header>
-      <h1>Really Awesome Music Site</h1>
+      <div id="logo">Really Awesome Music Site</div>
     </header>
     <section class="player">
       <audio class="music-player" controls="controls" src=""></audio>
       <form class="search-form">
-        <input type="text" name="" value="" placeholder="Search for a song or artist">
-        <button type="button" name="button">Search</button>
+        <input id='searchBar' type="text" name='searchBar' value="" placeholder="Search for a song or artist">
+        <button id='searchButton' type="button" name="searchButton">Search</button>
       </form>
     </section>
     <section class="search">
@@ -23,11 +23,7 @@
         <button type="button" name="button">Search</button>
       </form> -->
     </section>
-    <section class="results">
-      <article class="resultItem">
-        <h2>Song Title</h2>
-        <h3>Band Name</h3>
-      </article>
+    <section id="resultsGrid" class="results">
     </section>
   </div>
   <script src="main.js"></script>

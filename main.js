@@ -8,6 +8,17 @@
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
 
+let resultsGrid = document.getElementById('resultsGrid');
+let searchButton = document.getElementById('searchButton');
+let searchBar = document.getElementById('searchBar');
+
+function searchClick(){
+  let query = searchBar.value;
+  let altQuery = query.split(' ').join('+');
+}
+
+searchButton.addEventListener('click', searchClick);
+
 fetch('https://itunes.apple.com/search?term=jack+johnson&limit=16')
   // Data is fetched and we get a promise.
   .then(
@@ -20,6 +31,30 @@ fetch('https://itunes.apple.com/search?term=jack+johnson&limit=16')
       }
       response.json().then(function(data) {
         console.log('Here is the data:', data);
+
+        let resultHead = document.createElement('h1');
+        resultHead.id = 'resultHead';
+        resultHead.textContent = 'Results for: SEARCH QUERY';
+
+        resultsGrid.appendChild(resultHead);
+
+        for(var i = 0; i < data.results.length; i++) {
+          let result = document.createElement('article');
+          result.setAttribute('class', 'resultItem');
+          result.id = i;
+
+          let bgImg = data.results[i].artworkUrl100;
+
+          result.style.backgroundImage = 'url(' + bgImg + ')';
+
+          result.innerHTML +=
+          `
+          <h2>${data.results[i].trackName}</h2>
+          <h3>${data.results[i].artistName}</h3>
+          `
+          resultsGrid.appendChild(result);
+
+        }
       });
     }
   )
