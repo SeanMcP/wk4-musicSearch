@@ -135,6 +135,7 @@ section.player {
   background-repeat: no-repeat;
   background-size: cover;
 	border: 0;
+	cursor: pointer;
 	display: flex;
 	flex: 1 20%;
 	flex-flow: column nowrap;

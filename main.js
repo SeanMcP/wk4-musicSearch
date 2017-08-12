@@ -21,16 +21,12 @@ function searchClick(){
   let query = searchBar.value;
 
   if(query){
-    
+
     clearField();
     let altQuery = query.split(' ').join('+');
 
-    fetch('https://itunes.apple.com/search?term=' + altQuery + '&limit=16')
-      // Data is fetched and we get a promise.
-      .then(
-        // The promise returns a response from the server.
-        function(response) {
-          // We process the response accordingly.
+    fetch('https://itunes.apple.com/search?term=' + altQuery + '&limit=12')
+      .then(function(response) {
           if (response.status !== 200) {
             console.log(response.status);
             return;
@@ -78,7 +74,6 @@ function searchClick(){
               let player = document.getElementById('musicPlayer');
               let musicUrl = data.results[index].previewUrl;
               player.setAttribute('src', musicUrl);
-              console.log(player);
               player.play();
             }
           });
