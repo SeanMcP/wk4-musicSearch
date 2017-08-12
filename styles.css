@@ -78,6 +78,7 @@ section.player {
   flex-flow: row nowrap;
   margin: 35vh auto 40px;
 	max-width: 600px;
+	transition: margin 0.3s ease-in-out;
   width: 96%;
 }
 .search-form * {
@@ -88,8 +89,10 @@ section.player {
 .search-form input {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
   border: 0;
+	border-bottom-left-radius: 3px;
 	border-right: 1px solid rgba(0, 0, 0, 0.05);
-  color: rgba(255, 255, 255, 0.7);
+	border-top-left-radius: 3px;
+	color: rgba(255, 255, 255, 0.7);
   flex: 1 50%;
   font-family: 'Roboto';
   font-weight: 300;
@@ -101,6 +104,8 @@ section.player {
 .search-form button {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
   border: 0;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
   color: rgba(255, 255, 255, 0.5);
   font-family: 'Roboto';
   font-weight: 300;
