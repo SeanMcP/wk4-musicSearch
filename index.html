@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>iTunes Music Search</title>
+  <title>QuickTunes</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <header>
-      <div id="logo">Really Awesome Music Site</div>
+      <div id="logo">QuickTunes</div>
     </header>
-    <section class="player">
-      <audio class="music-player" controls="controls" src=""></audio>
-      <form class="search-form">
+    <section class="search">
+      <form id="searchForm" class="search-form">
         <input id='searchBar' type="text" name='searchBar' value="" placeholder="Search for a song or artist">
         <button id='searchButton' type="button" name="searchButton">Search</button>
       </form>
     </section>
-    <section class="search">
-      <!-- <form class="search-form">
-        <input type="text" name="" value="" placeholder="Search for a song or artist">
-        <button type="button" name="button">Search</button>
-      </form> -->
-    </section>
-    <section id="resultsGrid" class="results">
-    </section>
   </div>
+  <audio id="musicPlayer" class="music-player" controls="controls" src=""></audio>
   <script src="main.js"></script>
 </body>
 </html>
