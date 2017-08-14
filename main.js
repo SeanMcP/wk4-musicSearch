@@ -11,6 +11,7 @@
 let resultsGrid = document.createElement('resultsGrid');
 let searchBar = document.getElementById('searchBar');
 let searchButton = document.getElementById('searchButton');
+let searchForm = document.getElementById('searchForm');
 
 
 function clearField(){
@@ -18,6 +19,9 @@ function clearField(){
 }
 
 function searchClick(){
+
+  event.preventDefault();
+
   let query = searchBar.value;
 
   if(query){
@@ -85,10 +89,5 @@ function searchClick(){
   }
 }
 
-// if(searchButton.addEventListener){
-//   searchButton.addEventListener('submit', searchClick, false);
-// } else if(searchButton.attachEvent){
-//   searchButton.attachEvent('onsubmit', searchClick);
-// }
-
 searchButton.addEventListener('click', searchClick);
+searchForm.addEventListener('submit', searchClick);

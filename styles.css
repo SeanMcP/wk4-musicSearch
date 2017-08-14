@@ -70,6 +70,10 @@ header {
   font-size: 1em;
 	font-weight: 700;
 }
+#logo a {
+	color: white;
+	text-decoration: none;
+}
 .italic {
 	font-style: italic;
 	font-weight: 300;
