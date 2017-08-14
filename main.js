@@ -13,6 +13,8 @@ let searchBar = document.getElementById('searchBar');
 let searchButton = document.getElementById('searchButton');
 let searchForm = document.getElementById('searchForm');
 
+let playPauseFlag = false;
+
 
 function clearField(){
   resultsGrid.innerHTML = '';
@@ -60,11 +62,25 @@ function searchClick(){
 
               result.style.backgroundImage = 'url(' + bgImg + ')';
 
-              result.innerHTML +=
-              `
-              <h2>${data.results[i].trackName}</h2>
-              <h3>${data.results[i].artistName}</h3>
-              `
+              if (data.results[i].kind === "feature-movie") {
+                result.innerHTML +=
+                `
+                <h2>${data.results[i].trackName} <span class="altType">Film</span></h2>
+                <h3>${data.results[i].artistName}</h3>
+                `
+              } else if (data.results[i].wrapperType === "audiobook"){
+                result.innerHTML +=
+                `
+                <h2>${data.results[i].trackName} <span class="altType">Audiobook</span></h2>
+                <h3>${data.results[i].artistName}</h3>
+                `
+              } else {
+                result.innerHTML +=
+                `
+                <h2>${data.results[i].trackName}</h2>
+                <h3>${data.results[i].artistName}</h3>
+                `
+              }
 
               result.addEventListener('click', function(event){
                 playMusic(event.target.id);
@@ -74,11 +90,19 @@ function searchClick(){
 
             }
             function playMusic(indexStr){
-              let index = Number(indexStr);
               let player = document.getElementById('musicPlayer');
-              let musicUrl = data.results[index].previewUrl;
-              player.setAttribute('src', musicUrl);
-              player.play();
+              if(playPauseFlag){
+                player.pause();
+                console.log('Pause');
+                playPauseFlag = false;
+              } else {
+                let index = Number(indexStr);
+                let musicUrl = data.results[index].previewUrl;
+                player.setAttribute('src', musicUrl);
+                player.play();
+                console.log('');
+                playPauseFlag = true;
+              }
             }
           });
         }
